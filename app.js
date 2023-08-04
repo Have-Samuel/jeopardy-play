@@ -20,7 +20,6 @@
 
 let categories = [];
 
-
 /** Get NUM_CATEGORIES random category from API.
  *
  * Returns array of category ids
