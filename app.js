@@ -1,22 +1,22 @@
 // categories is the main data structure for the app; it looks like this:
 
-//  [
-//    { title: "Math",
-//      clues: [
-//        {question: "2+2", answer: 4, showing: null},
-//        {question: "1+1", answer: 2, showing: null}
-//        ...
-//      ],
-//    },
-//    { title: "Literature",
-//      clues: [
-//        {question: "Hamlet Author", answer: "Shakespeare", showing: null},
-//        {question: "Bell Jar Author", answer: "Plath", showing: null},
-//        ...
-//      ],
-//    },
-//    ...
-//  ]
+ const categories = [
+            { title: 'american revolution',
+              clues: [
+                {question: 'Nickname of the British from the color of their clothing?', answer: 'The Redcoats', showing: null},
+                {question: '1768 American war tune which was set to a 1500s melody', answer: 'Yankee Doodle', showing: null},
+                {question: 'Brigadier Gen. O Hara went through the final surrender in place of this English commander', answer: 'Cornwallis', showing: null},
+                {question: 'The 2 foreign countries which fought on our side', answer: 'France \u0026 Spain', showing: null},
+                {question: 'General Howe faced him in Brandywine, Germantown, \u0026 Long Island battles', answer: 'George Washington', showing: null}
+              ],
+            },
+            { title: "Literature",
+              clues: [
+                {question: "Hamlet Author", answer: "Shakespeare", showing: null},
+                {question: "Bell Jar Author", answer: "Plath", showing: null},
+              ],
+            },
+          ]
 
 let categories = [];
 
