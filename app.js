@@ -10,10 +10,13 @@
                 {question: 'General Howe faced him in Brandywine, Germantown, \u0026 Long Island battles', answer: 'George Washington', showing: null}
               ],
             },
-            { title: "Literature",
+            { title: "world geography",
               clues: [
-                {question: "Hamlet Author", answer: "Shakespeare", showing: null},
-                {question: "Bell Jar Author", answer: "Plath", showing: null},
+                {question: 'Capital of Sri Lanka, it sounds like Peter Falk\'s been there', answer: 'Colombo', showing: null},
+                {question: 'Continent Greenland is considered part of..', answer: 'North America', showing: null},
+                {question: 'As Cape Horn is to South America, this is to Africa', answer: 'The Cape of Good Hope', showing: null},
+                {question: 'Closest foreign country to Fairbanks, Alaska', answer: 'Canada', showing: null},
+                {question: 'The Gulf of Aqaba separates these 2 Mid-East peninsulas', answer: 'The Arabian Peninsula \u0026 the Sinai Peninsula', showing: null}
               ],
             },
           ]
