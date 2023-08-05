@@ -1,7 +1,7 @@
 // categories is the main data structure for the app; it looks like this:
 
  const categories = [
-            { title: 'american revolution',
+            { title: 'American Revolution',
               clues: [
                 {question: 'Nickname of the British from the color of their clothing?', answer: 'The Redcoats', showing: null},
                 {question: '1768 American war tune which was set to a 1500s melody', answer: 'Yankee Doodle', showing: null},
@@ -10,13 +10,40 @@
                 {question: 'General Howe faced him in Brandywine, Germantown, \u0026 Long Island battles', answer: 'George Washington', showing: null}
               ],
             },
-            { title: "world geography",
+            { title: "World Geography",
               clues: [
                 {question: 'Capital of Sri Lanka, it sounds like Peter Falk\'s been there', answer: 'Colombo', showing: null},
                 {question: 'Continent Greenland is considered part of..', answer: 'North America', showing: null},
                 {question: 'As Cape Horn is to South America, this is to Africa', answer: 'The Cape of Good Hope', showing: null},
                 {question: 'Closest foreign country to Fairbanks, Alaska', answer: 'Canada', showing: null},
                 {question: 'The Gulf of Aqaba separates these 2 Mid-East peninsulas', answer: 'The Arabian Peninsula \u0026 the Sinai Peninsula', showing: null}
+              ],
+            },
+            { title: 'Winter Sports',
+              clues: [
+                {question: 'Motorized sledding', answer: 'Snowmobiling', showing: null},
+                {question: 'To do this, you put 2 \"baskets\" on your feet \u0026 take three giant steps', answer: 'Snowshoe', showing: null},
+                {question: 'The diagonal stride is the basic move in this popular form of Nordic skiing', answer: 'Cross Country', showing: null},
+                {question: 'In the 18th C., iceboating originated on the frozen canals of this north European country', answer: 'Holland (the Netherlands)', showing: null},
+                {question: 'They were 1st held at Chamonix, France in 1924', answer: 'The Winter Olympics', showing: null}
+              ],
+            },
+            { title: '',
+              clues: [
+                {question: '', answer: '', showing: null},
+                {question: '', answer: '', showing: null},
+                {question: '', answer: '', showing: null},
+                {question: '', answer: '', showing: null},
+                {question: '', answer: '', showing: null}
+              ],
+            },
+            { title: '',
+              clues: [
+                {question: '', answer: '', showing: null},
+                {question: '', answer: '', showing: null},
+                {question: '', answer: '', showing: null},
+                {question: '', answer: '', showing: null},
+                {question: '', answer: '', showing: null}
               ],
             },
           ]
