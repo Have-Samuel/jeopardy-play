@@ -86,68 +86,7 @@ function getCategory(catId) {
 }
 
 // Fill the HTML table#jeopardy with the categories & cells for questions.
-const $jeopardy = $('#jeopardy');
-$jeopardy.innerHTML = `
-
-  <thead>
-    <tr>
-      <td>${categories[0].title.valueOf}</td>
-      <td>${categories[1].title.valueOf}</td>
-      <td>${categories[2].title.valueOf}</td>
-      <td>${categories[3].title.valueOf}</td>
-      <td>${categories[4].title.valueOf}</td>
-      <td>${categories[5].title.valueOf}</td>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>${categories[0].clues[0].question}</td>
-      <td>${categories[1].clues[0].question}</td>
-      <td>${categories[2].clues[0].question}</td>
-      <td>${categories[3].clues[0].question}</td>
-      <td>${categories[4].clues[0].question}</td>
-      <td>${categories[5].clues[0].question}</td>
-    </tr>
-    <tr>
-      <td>${categories[0].clues[1].question}</td>
-      <td>${categories[1].clues[1].question}</td>
-      <td>${categories[2].clues[1].question}</td>
-      <td>${categories[3].clues[1].question}</td>
-      <td>${categories[4].clues[1].question}</td>
-      <td>${categories[5].clues[1].question}</td>
-    </tr>
-    <tr>
-      <td>${categories[0].clues[2].question}</td>
-      <td>${categories[1].clues[2].question}</td>
-      <td>${categories[2].clues[2].question}</td>
-      <td>${categories[3].clues[2].question}</td>
-      <td>${categories[4].clues[2].question}</td>
-      <td>${categories[5].clues[2].question}</td>
-    </tr>
-    <tr>
-      <td>${categories[0].clues[3].question}</td>
-      <td>${categories[1].clues[3].question}</td>
-      <td>${categories[2].clues[3].question}</td>
-      <td>${categories[3].clues[3].question}</td>
-      <td>${categories[4].clues[3].question}</td>
-      <td>${categories[5].clues[3].question}</td>
-    </tr>
-    <tr>
-      <td>${categories[0].clues[4].question}</td>
-      <td>${categories[1].clues[4].question}</td>
-      <td>${categories[2].clues[4].question}</td>
-      <td>${categories[3].clues[4].question}</td>
-      <td>${categories[4].clues[4].question}</td>
-      <td>${categories[5].clues[4].question}</td>
-    </tr>
-  </tbody>
-`;
-// Append the table to the DOM
-$jeopardy.append($jeopardy);
-
-// Add event listener to the table
-$jeopardy.on('click', handleClick);
+const jeopard = document.querySelector('#jeopardy');
 
 // The <thead> should be filled w/a <tr>, and a <td> for each category
 // The <tbody> should be filled w/NUM_QUESTIONS_PER_CAT <tr>s,
