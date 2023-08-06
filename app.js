@@ -2,6 +2,7 @@
 
  const categories = [
             { title: 'American Revolution',
+              id: 150,
               clues: [
                 {question: 'Nickname of the British from the color of their clothing?', answer: 'The Redcoats', showing: null},
                 {question: '1768 American war tune which was set to a 1500s melody', answer: 'Yankee Doodle', showing: null},
@@ -11,6 +12,7 @@
               ],
             },
             { title: "World Geography",
+              id: 121,
               clues: [
                 {question: 'Capital of Sri Lanka, it sounds like Peter Falk\'s been there', answer: 'Colombo', showing: null},
                 {question: 'Continent Greenland is considered part of..', answer: 'North America', showing: null},
@@ -20,6 +22,7 @@
               ],
             },
             { title: 'Winter Sports',
+              id: 50,
               clues: [
                 {question: 'Motorized sledding', answer: 'Snowmobiling', showing: null},
                 {question: 'To do this, you put 2 \"baskets\" on your feet \u0026 take three giant steps', answer: 'Snowshoe', showing: null},
@@ -28,16 +31,18 @@
                 {question: 'They were 1st held at Chamonix, France in 1924', answer: 'The Winter Olympics', showing: null}
               ],
             },
-            { title: '',
+            { title: '1933',
+              id: 40,
               clues: [
-                {question: '', answer: '', showing: null},
-                {question: '', answer: '', showing: null},
-                {question: '', answer: '', showing: null},
-                {question: '', answer: '', showing: null},
-                {question: '', answer: '', showing: null}
+                {question: 'You never saw FDR smoking a cigarette without one of these', answer: 'Cigarette Holder', showing: null},
+                {question: 'He came to the U.S. in 1933 \u0026 helped found the School of American Ballet', answer: 'George Balanchine', showing: null},
+                {question: 'In Berlin, in May, this was done to works of Freud, Einstein and Thomas Mann, among others', answer: 'Burning', showing: null},
+                {question: 'Ratified in 1933, the 21st Amendment repealed Prohibition, put into effect by this amendment', answer: 'The 18th Amendment', showing: null},
+                {question: 'On February 15 this president-elect survived an assassination attempt by Giuseppe Zangara', answer: 'Franklin D. Roosevelt', showing: null}
               ],
             },
-            { title: '',
+            { title: 'awardA',
+              id: 160,
               clues: [
                 {question: '', answer: '', showing: null},
                 {question: '', answer: '', showing: null},
