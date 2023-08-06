@@ -86,8 +86,13 @@ function getCategory(catId) {
 }
 
 // Fill the HTML table#jeopardy with the categories & cells for questions.
-const jeopard = document.querySelector('#jeopardy');
+const $jeopardy = $('#jeopardy');
+// The first row should be filled with <th> elements, one for each category
 
+for (let i = 0; i < categories.length; i += 1) {
+  const $category = $('<th>').text(categories[i].title);
+  $jeopardy.append($category);
+}
 // The <thead> should be filled w/a <tr>, and a <td> for each category
 // The <tbody> should be filled w/NUM_QUESTIONS_PER_CAT <tr>s,
 //  each with a question for each category in a <td>
