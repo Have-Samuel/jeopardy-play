@@ -29,6 +29,6 @@ We’ve also provided a starter JS file with function definitions. Implement the
  - In the requirements, we’ve asked for 6 random categories. Unfortunately, the jService API doesn’t have a method that returns a random category — you’ll need to figure this out.
 
   There are a few possible strategies here:
-    - Get a bunch of categories, and keep randomly choosing one, making sure you don’t choose the same one twice.
-    - Get a bunch of categories, shuffle them, then pick the first 6. Unfortunately, Javscript doesn’t have a built-in shuffle function, but you can find hints online on how to make one.
-    - Find a function that will pick n random things for you. This is often called “sampling”. There’s a popular library for Javascript, Lodash, which provides a function that can sample a particular number of items from a larger list, making sure there are no duplicates.
+     - Get a bunch of categories, and keep randomly choosing one, making sure you don’t choose the same one twice.
+     - Get a bunch of categories, shuffle them, then pick the first 6. Unfortunately, Javscript doesn’t have a built-in shuffle function, but you can find hints online on how to make one.
+     - Find a function that will pick n random things for you. This is often called “sampling”. There’s a popular library for Javascript, Lodash, which provides a function that can sample a particular number of items from a larger list, making sure there are no duplicates.
