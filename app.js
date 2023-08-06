@@ -88,15 +88,30 @@ function getCategory(catId) {
 // Fill the HTML table#jeopardy with the categories & cells for questions.
 const $jeopardy = $('#jeopardy');
 // The first row should be filled with <th> elements, one for each category
+const $thead = $('<thead>');
+const tbody = $('<tbody>');
 
 for (let i = 0; i < categories.length; i += 1) {
-  const $category = $('<th>').text(categories[i].title);
-  $jeopardy.append($category);
+  const $th = $('<th>').text(categories[i].title);
+  // const $td = $('<td>').text('?');
+
+  // $td.attr('id', `${i}`);
+  // $td.attr('class', 'question');
+  // $td.attr('value', `${categories[i].clues[0].question}`);
+  // $td.attr('answer', `${categories[i].clues[0].answer}`);
+  // $td.attr('showing', `${categories[i].clues[0].showing}`);
+
+  $thead.append($th);
+
+  for (let j = 0; j < categories[i].clues.length; j += 1) {
+    const $tr = $('<tr>');
+    const $td = $('<td>').text('?');
+    $tr.append($td);
+    tbody.append($tr);
+  }
+  $jeopardy.append($thead);
+  $jeopardy.append(tbody);
 }
-// The <thead> should be filled w/a <tr>, and a <td> for each category
-// The <tbody> should be filled w/NUM_QUESTIONS_PER_CAT <tr>s,
-//  each with a question for each category in a <td>
-// (initally, just show a "?" where the question/answer would go.)
 
 async function fillTable() {
 }
