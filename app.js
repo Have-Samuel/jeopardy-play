@@ -60,20 +60,12 @@ let categories = [];
  * Returns array of category ids
  */
 
-function getCategoryIds() {
+async function getCategoryIds() {
+  // Fetching the data from the API
+  const response = await axios.get('https://jservice.io/api/categories', {params: {count: 100}});
+  // Getting the data from the response
 }
 
-/** Return object with data about a category:
- *
- *  Returns { title: "Math", clues: clue-array }
- *
- * Where clue-array is:
- *   [
- *      {question: "Hamlet Author", answer: "Shakespeare", showing: null},
- *      {question: "Bell Jar Author", answer: "Plath", showing: null},
- *      ...
- *   ]
- */
 
 function getCategory(catId) {
 }
