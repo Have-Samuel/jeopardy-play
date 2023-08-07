@@ -12,7 +12,14 @@
   box-sizing: border-box;
 }
 
-.heading {
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
+
+.card {
   width: 160px;
   height: 120px;
   background-color: rgb(26, 26, 355);
