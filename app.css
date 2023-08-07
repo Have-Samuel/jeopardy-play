@@ -5,3 +5,24 @@
   #8d2ab5
   #74119c
 */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  width: 160px;
+  height: 120px;
+  background-color: rgb(26, 26, 355);
+  border-left: 10px solid rgb(19, 19, 160);
+  border-right: 10px solid rgb(11, 11, 91);
+  border-top: 10px solid rgb(1, 61, 200);
+  border-bottom: 10px solid rgb(20, 20, 89);
+  text-align: center;
+  font-size: 100px;
+  margin: 5px;
+  padding: 10px;
+  line-height: 120px;
+}
