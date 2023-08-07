@@ -89,7 +89,7 @@ function getCategory(catId) {
 const $jeopardy = $('#jeopardy');
 // The first row should be filled with <th> elements, one for each category
 const $thead = $('<thead>');
-const tbody = $('<tbody>');
+$jeopardy.append($thead);
 
 // for (let i = 0; i < categories.length; i += 1) {
 //   const $th = $('<th>').text(categories[i].title);
@@ -114,13 +114,16 @@ const tbody = $('<tbody>');
 // }
 
 function addCategory(category) {
-  const $th = $('<th>').text(category.title);
-  $th.addClass('headings');
-  $thead.append($th);
+  const $tr = $('<tr>');
+  const $td = $('td');
+  $td.text(category.title);
+  $tr.append($td);
+  // $th.addClass('headings');
+  $thead.append($tr);
   $jeopardy.append($thead);
 
   category.clues.forEach((clue) => {
-    const $tbody = $('<tbody>');
+    // const $tbody = $('<tbody>');
     const $tr = $('<tr>');
     const $td = $('<td>').text('?');
     $tr.addClass('card');
@@ -130,8 +133,8 @@ function addCategory(category) {
     $td.attr('answer', `${clue.answer}`);
     $td.attr('showing', `${clue.showing}`);
     $tr.append($td);
-    $tbody.append($tr);
-    $jeopardy.append($tbody);
+    $thead.append($tr);
+    // $jeopardy.append($tbody);
 
     // const $tr = $('<tr>');
     // const $td = $('<td>').text('?');

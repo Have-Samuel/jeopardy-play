@@ -12,21 +12,21 @@
   box-sizing: border-box;
 }
 
-/* body {
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-} */
+}
 
 .headings {
-  display: inline-block;
-  margin: 3px;
-  color: rgb(32, 29, 29);
-  font-size: 16px;
+  display: flex;
+  /* margin: 3px; */
+  /* color: rgb(32, 29, 29); */
+  /* font-size: 16px; */
   /* justify-content: center;
-  align-items: center;
-  flex-direction: row; */
+  align-items: center; */
+  flex-direction: column;
 }
 
 .card {
