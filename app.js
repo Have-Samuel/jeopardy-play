@@ -85,33 +85,33 @@ getCategoryIds();
 function getCategory(catId) {
 }
 
-// // Fill the HTML table#jeopardy with the categories & cells for questions.
-// const $jeopardy = $('#jeopardy');
-// // The first row should be filled with <th> elements, one for each category
-// const $thead = $('<thead>');
+// Fill the HTML table#jeopardy with the categories & cells for questions.
+const $jeopardy = $('#jeopardy');
+// The first row should be filled with <th> elements, one for each category
+const $thead = $('<thead>');
 // const tbody = $('<tbody>');
 
-// for (let i = 0; i < categories.length; i += 1) {
-//   const $th = $('<th>').text(categories[i].title);
-//   // const $td = $('<td>').text('?');
+for (let i = 0; i < categories.length; i += 1) {
+  const $th = $('<th>').text(categories[i].title);
+  // const $td = $('<td>').text('?');
 
-//   // $td.attr('id', `${i}`);
-//   // $td.attr('class', 'question');
-//   // $td.attr('value', `${categories[i].clues[0].question}`);
-//   // $td.attr('answer', `${categories[i].clues[0].answer}`);
-//   // $td.attr('showing', `${categories[i].clues[0].showing}`);
+  // $td.attr('id', `${i}`);
+  // $td.attr('class', 'question');
+  // $td.attr('value', `${categories[i].clues[0].question}`);
+  // $td.attr('answer', `${categories[i].clues[0].answer}`);
+  // $td.attr('showing', `${categories[i].clues[0].showing}`);
 
-//   $thead.append($th);
+  $thead.append($th);
 
-//   for (let j = 0; j < categories[i].clues.length; j += 1) {
-//     const $tr = $('<tr>');
-//     const $td = $('<td>').text('?');
-//     $tr.append($td);
-//     tbody.append($tr);
-//   }
-//   $jeopardy.append($thead);
-//   $jeopardy.append(tbody);
-// }
+  // for (let j = 0; j < categories[i].clues.length; j += 1) {
+  //   const $tr = $('<tr>');
+  //   const $td = $('<td>').text('?');
+  //   $tr.append($td);
+  //   tbody.append($tr);
+  // }
+  $jeopardy.append($thead);
+  // $jeopardy.append(tbody);
+}
 
 async function fillTable() {
 }
