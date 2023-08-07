@@ -86,12 +86,69 @@ function getCategory(catId) {
 }
 
 // Fill the HTML table#jeopardy with the categories & cells for questions.
-const jeopard = document.querySelector('#jeopardy');
+const $jeopardy = $('#jeopardy');
+// The first row should be filled with <th> elements, one for each category
+const $thead = $('<thead>');
+$jeopardy.append($thead);
 
-// The <thead> should be filled w/a <tr>, and a <td> for each category
-// The <tbody> should be filled w/NUM_QUESTIONS_PER_CAT <tr>s,
-//  each with a question for each category in a <td>
-// (initally, just show a "?" where the question/answer would go.)
+// for (let i = 0; i < categories.length; i += 1) {
+//   const $th = $('<th>').text(categories[i].title);
+//   // const $td = $('<td>').text('?');
+
+//   // $td.attr('id', `${i}`);
+//   // $td.attr('class', 'question');
+//   // $td.attr('value', `${categories[i].clues[0].question}`);
+//   // $td.attr('answer', `${categories[i].clues[0].answer}`);
+//   // $td.attr('showing', `${categories[i].clues[0].showing}`);
+//   $th.addClass('headings');
+//   $thead.append($th);
+
+//   // for (let j = 0; j < categories[i].clues.length; j += 1) {
+//   //   const $tr = $('<tr>');
+//   //   const $td = $('<td>').text('?');
+//   //   $tr.append($td);
+//   //   tbody.append($tr);
+//   // }
+//   $jeopardy.append($thead);
+// $jeopardy.append(tbody);
+// }
+
+function addCategory(category) {
+  const $tr = $('<tr>');
+  const $td = $('td');
+  $td.text(category.title);
+  $tr.append($td);
+  // $th.addClass('headings');
+  $thead.append($tr);
+  $jeopardy.append($thead);
+
+  category.clues.forEach((clue) => {
+    // const $tbody = $('<tbody>');
+    const $tr = $('<tr>');
+    const $td = $('<td>').text('?');
+    $tr.addClass('card');
+    $td.attr('id', `${clue.id}`);
+    $td.attr('class', 'question');
+    $td.attr('value', `${clue.question}`);
+    $td.attr('answer', `${clue.answer}`);
+    $td.attr('showing', `${clue.showing}`);
+    $tr.append($td);
+    $thead.append($tr);
+    // $jeopardy.append($tbody);
+
+    // const $tr = $('<tr>');
+    // const $td = $('<td>').text('?');
+    // $tr.addClass('card');
+    // $td.attr('id', `${clue.id}`);
+    // $td.attr('class', 'question');
+    // $td.attr('value', `${clue.question}`);
+    // $td.attr('answer', `${clue.answer}`);
+    // $td.attr('showing', `${clue.showing}`);
+    // $tr.append($td);
+    // $jeopardy.append($tr);
+  });
+}
+categories.forEach((category) => addCategory(category));
 
 async function fillTable() {
 }
