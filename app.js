@@ -100,7 +100,7 @@ for (let i = 0; i < categories.length; i += 1) {
   // $td.attr('value', `${categories[i].clues[0].question}`);
   // $td.attr('answer', `${categories[i].clues[0].answer}`);
   // $td.attr('showing', `${categories[i].clues[0].showing}`);
-
+  $th.addClass('headings');
   $thead.append($th);
 
   // for (let j = 0; j < categories[i].clues.length; j += 1) {
