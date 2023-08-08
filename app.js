@@ -92,11 +92,12 @@ const tbody = document.querySelector('#tbody');
 // The first row should be filled with <th> elements, one for each category
 
 function addCategory(category) {
-  const heading = document.createElement('tr');
-  heading.innerHTML = `<th>${category.title}</th>`;
-  thead.append(heading);
-
-  // The rest of the rows should have the question dollar amount in the first <td> element, and the question/answer text in a second <td>
+  const tr = document.createElement('tr');
+  const td = document.createElement('td');
+  td.innerText = category.title;
+  tr.appendChild(td);
+  console.log(td);
+  thead.appendChild(tr);
 }
 
 categories.forEach((category) => addCategory(category));
