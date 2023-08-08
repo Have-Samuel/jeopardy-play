@@ -86,42 +86,20 @@ function getCategory(catId) {
 }
 
 // Fill the HTML table#jeopardy with the categories & cells for questions.
-const $jeopardy = $('#jeopardy');
+const jeopardy = document.querySelector('#jeopardy');
+const thead = document.querySelector('#thead');
+const tbody = document.querySelector('#tbody');
 // The first row should be filled with <th> elements, one for each category
-const $thead = $('<thead>');
 
-for (let i = 0; i < categories.length; i += 1) {
-  const $th = $('<th>').text(categories[i].title);
-  // const $td = $('<td>').text('?');
+function addCategory(category) {
+  const heading = document.createElement('tr');
+  heading.innerHTML = `<th>${category.title}</th>`;
+  thead.append(heading);
 
-  // $td.attr('id', `${i}`);
-  // $td.attr('class', 'question');
-  // $td.attr('value', `${categories[i].clues[0].question}`);
-  // $td.attr('answer', `${categories[i].clues[0].answer}`);
-  // $td.attr('showing', `${categories[i].clues[0].showing}`);
-  $th.addClass('headings');
-  $thead.append($th);
-
-  for (let j = 0; j < categories[i].clues.length; j += 1) {
-    const $tr = $('<tr>');
-    const $td = $('<td>').text('?');
-    $tr.append($td);
-    // tbody.append($tr);
-  }
-  $jeopardy.append($thead);
-// $jeopardy.append(tbody);
+  // The rest of the rows should have the question dollar amount in the first <td> element, and the question/answer text in a second <td>
 }
 
-// function addCategory(category) {
-//   const $tr = $('<tr>');
-//   const $td = $('td');
-//   $td.text(category.title);
-//   $tr.append($td);
-//   // $tr.addClass('headings');
-//   $thead.append($tr);
-//   $jeopardy.append($thead);
-// }
-// categories.forEach((category) => addCategory(category));
+categories.forEach((category) => addCategory(category));
 
 async function fillTable() {
 }
