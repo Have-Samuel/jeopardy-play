@@ -95,9 +95,10 @@ function addCategory(category) {
   const tr = document.createElement('tr');
   const td = document.createElement('td');
   td.innerText = category.title;
-  tr.appendChild(td);
-  console.log(td);
-  thead.appendChild(tr);
+  tr.append(td);
+  console.log(tr);
+  thead.append(tr);
+  jeopardy.append(thead);
 }
 
 categories.forEach((category) => addCategory(category));
