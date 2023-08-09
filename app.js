@@ -87,8 +87,6 @@ function getCategory(catId) {
 
 // Fill the HTML table#jeopardy with the categories & cells for questions.
 const jeopardy = document.querySelector('#jeopardy');
-// const thead = document.querySelector('#thead');
-// const tbody = document.querySelector('#tbody');
 // The first row should be filled with <th> elements, one for each category
 
 function addCategory(category) {
