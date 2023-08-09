@@ -24,8 +24,6 @@ body {
   /* margin: 3px; */
   color: rgb(32, 29, 29);
   font-size: 16px;
-  /* justify-content: center;
-  align-items: center; */
   flex-direction: column;
 }
 
