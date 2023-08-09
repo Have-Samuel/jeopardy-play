@@ -91,7 +91,7 @@ const jeopardy = document.querySelector('#jeopardy');
 
 function addCategory(category) {
   const thead = document.querySelector('#thead');
-  const tbody = document.querySelector('#tbody');
+  // const tbody = document.querySelector('#tbody');
 
   const tr = document.createElement('tr');
   const th = document.createElement('th');
