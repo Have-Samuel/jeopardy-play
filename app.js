@@ -100,7 +100,7 @@ function addCategory(category) {
   tr.appendChild(th);
 
   thead.appendChild(tr);
-  
+  jeopardy.append(thead);
 }
 
 categories.forEach((category) => addCategory(category));
