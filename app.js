@@ -90,7 +90,8 @@ const jeopardy = document.querySelector('#jeopardy');
 // The first row should be filled with <th> elements, one for each category
 
 function addCategory(category) {
-  const thead = document.createElement('#thead');
+  const thead = document.createElement('thead');
+  // thead.setAttribute('id', 'thead');
   // const tbody = document.querySelector('#tbody');
 
   const tr = document.createElement('tr');
