@@ -28,6 +28,12 @@ body {
   flex-direction: row;
 }
 
+tbody,
+th,
+tr {
+  border: 1px solid black;
+}
+
 .card {
   display: flex;
   justify-content: center;
