@@ -92,8 +92,6 @@ jeopardy.classList = 'headings';
 
 function addCategory(category) {
   const thead = document.createElement('thead');
-  // thead.classList.add('headings');
-  // const tbody = document.querySelector('#tbody');
 
   const tr = document.createElement('tr');
   const th = document.createElement('th');
