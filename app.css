@@ -31,7 +31,13 @@ body {
 tbody,
 th,
 tr {
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* margin-bottom: 0.3rem; */
+  margin: 0.05rem;
+  /* border: 1px solid black; */
 }
 
 .card {
