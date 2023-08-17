@@ -113,7 +113,7 @@ function addCategory(category) {
   th.innerText = category.title;
   tr.appendChild(th);
 
-  // thead.appendChild(tr);
+  thead.appendChild(tr);
   tbody.appendChild(tr);
   jeopardy.append(thead);
 
