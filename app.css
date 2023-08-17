@@ -23,17 +23,12 @@ body {
   display: flex;
   border: 1px solid black;
   justify-content: center;
-  color: rgb(32, 29, 29);
+  color: #fff;
   font-size: 16px;
   /* width: 160px; */
   /* height: 120px; */
-  flex-direction: row;
-  /* background-color: rgb(26, 26, 355); */
-  /* border-left: 10px solid rgb(19, 19, 160);
-  border-right: 10px solid rgb(11, 11, 91);
-  border-top: 10px solid rgb(1, 61, 200);
-  border-bottom: 10px solid rgb(20, 20, 89); */
-  border: 5px solid rgb(1, 61, 200);
+  /* flex-direction: row; */
+  border: 5px solid rgb(116, 63, 4);
 }
 
 tbody,
@@ -48,6 +43,16 @@ tr {
   /* border: 1px solid black; */
 }
 
+th {
+  margin: 0.05rem;
+  width: 14.05vw;
+  height: 10vh;
+  flex-direction: row;
+  color: antiquewhite;
+  background-color: rgb(255, 153, 0);
+  border-radius: 5px;
+}
+
 .card {
   display: flex;
   justify-content: center;
@@ -55,11 +60,9 @@ tr {
   flex-direction: column;
   width: 160px;
   height: 120px;
-  background-color: rgb(26, 26, 355);
-  border-top: 5px solid rgb(1, 61, 200);
-  border-bottom: 5px solid rgb(1, 61, 200);
-  border-left: 5px solid rgb(1, 61, 200);
-  border-right: 5px solid rgb(1, 61, 200);
+  background-color: rgb(255, 156, 0);
+  border: 5px solid rgb(200, 114, 1);
+ 
   /* border-left: 5px solid rgb(19, 19, 160);
   border-right: 5px solid rgb(11, 11, 100);
   border-top: 5px solid rgb(1, 61, 200);
