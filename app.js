@@ -56,6 +56,17 @@ const categories = [
       { question: '26 years after writing it for the stage, he won Oscar for the screenplay \"Pygmalion\"', answer: 'George Bernard Shaw', showing: null },
     ],
   },
+  {
+    title: 'The Bible',
+    id: 105,
+    clues: [
+      { question: 'The 1st book of the Bible', answer: 'Genesis', showing: null },
+      { question: 'The 2nd book of the Bible', answer: 'Exodus', showing: null },
+      { question: 'The 3rd book of the Bible', answer: 'Leviticus', showing: null },
+      { question: 'The 4th book of the Bible', answer: 'Numbers', showing: null },
+      { question: 'The 5th book of the Bible', answer: 'Deuteronomy', showing: null },
+    ],
+  },
 ];
 
 // let categories = [];
@@ -78,6 +89,7 @@ async function getCategoryIds() {
   // Getting the category ids from the data
   const categoryIds = data.map((category) => category.category_id);
   console.log(categoryIds);
+  console.log(categories);
 }
 
 getCategoryIds();
