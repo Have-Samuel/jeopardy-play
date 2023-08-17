@@ -104,6 +104,7 @@ jeopardy.classList = 'headings';
 
 function addCategory(category) {
   const thead = document.createElement('thead');
+  const tbody = document.createElement('tbody');
 
   const tr = document.createElement('tr');
   const th = document.createElement('th');
@@ -114,6 +115,17 @@ function addCategory(category) {
 
   thead.appendChild(tr);
   jeopardy.append(thead);
+
+  category.clues.forEach((clue) => {
+    const tr2 = document.createElement('tr');
+    // tr2.classList.add('card');
+    const td = document.createElement('td');
+    td.classList.add('card');
+    td.innerText = clue.question;
+    tr2.appendChild(td);
+    tbody.appendChild(tr2);
+    jeopardy.append(tbody);
+  });
 }
 
 categories.forEach((category) => addCategory(category));
