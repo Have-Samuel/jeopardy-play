@@ -19,6 +19,12 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  color: #6d521f;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
 .headings {
   display: flex;
   justify-content: center;
@@ -53,7 +59,6 @@ th {
   align-items: center;
   flex-direction: column;
   width: 14.05vw;
-  /* width: 160px; */
   height: 18vh;
   background-color: rgb(255, 156, 0);
   border: 5px solid rgb(200, 114, 1);
@@ -61,6 +66,7 @@ th {
   text-align: center;
   padding: 5px;
   overflow: hidden;
+  margin: 0.05rem;
 }
 
 button {
@@ -75,5 +81,4 @@ button {
   padding: 1rem;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
-  /* margin-right: 50rem; */
 }
