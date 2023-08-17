@@ -106,15 +106,15 @@ function addCategory(category) {
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
 
-  const tr = document.createElement('tr');
+  const tr1 = document.createElement('tr');
   const th = document.createElement('th');
   th.classList.add('ind-head');
 
   th.innerText = category.title;
-  tr.appendChild(th);
+  tr1.appendChild(th);
 
-  thead.appendChild(tr);
-  tbody.appendChild(tr);
+  // thead.appendChild(tr);
+  tbody.appendChild(tr1);
   jeopardy.append(thead);
 
   category.clues.forEach((clue) => {
