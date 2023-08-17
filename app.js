@@ -95,6 +95,7 @@ function addCategory(category) {
 
   const tr = document.createElement('tr');
   const th = document.createElement('th');
+  th.classList.add('ind-head');
 
   th.innerText = category.title;
   tr.appendChild(th);
