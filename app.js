@@ -52,8 +52,8 @@ const categories = [
       { question: 'British decoration named for former queen', answer: 'Victoria Cross', showing: null },
       { question: 'In the 80s Mario Lemieux \u0026 this man won every MVP award in the NHL', answer: 'Wayne Gretzky', showing: null },
       { question: 'Since 32 the U.S. Badge of Military Merit has had this colorful name', answer: 'The Purple Heart', showing: null },
-      { question: 'The Grammy Album of the Year for 1960 was this comic\s \"Button Down Mind\"', answer: 'Bob Newhart', showing: null },
-      { question: '26 years after writing it for the stage, he won Oscar for the screenplay \"Pygmalion\"', answer: 'George Bernard Shaw', showing: null },
+      { question: 'The Grammy Album of the Year for 1960 was this comic\\s \\"Button Down Mind\\"', answer: 'Bob Newhart', showing: null },
+      { question: '26 years after writing it for the stage, he won Oscar for the screenplay \\"Pygmalion\\"', answer: 'George Bernard Shaw', showing: null },
     ],
   },
   {
