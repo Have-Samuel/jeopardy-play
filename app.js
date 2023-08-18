@@ -108,7 +108,6 @@ function addCategory(category) {
 
   const tr1 = document.createElement('tr');
   const th = document.createElement('th');
-  th.classList.add('ind-head');
 
   th.innerText = category.title;
   tr1.appendChild(th);
@@ -119,7 +118,6 @@ function addCategory(category) {
 
   category.clues.forEach((clue) => {
     const tr2 = document.createElement('tr');
-    // tr2.classList.add('card');
     const td = document.createElement('td');
     td.classList.add('card');
     td.innerText = '#';
@@ -144,8 +142,8 @@ function addCategory(category) {
         card.innerText = answer;
         card.setAttribute('data-showing', 'answer');
       } else {
-        card.innerText = '#';
-        card.setAttribute('data-showing', 'null');
+        // card.innerText = '#';
+        card.setAttribute('data-showing', '#');
       }
     });
   });
