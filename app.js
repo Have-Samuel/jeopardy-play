@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // categories is the main data structure for the app; it looks like this:
 
 const categories = [
@@ -108,7 +109,6 @@ function addCategory(category) {
 
   const tr1 = document.createElement('tr');
   const th = document.createElement('th');
-  th.classList.add('ind-head');
 
   th.innerText = category.title;
   tr1.appendChild(th);
@@ -119,40 +119,55 @@ function addCategory(category) {
 
   category.clues.forEach((clue) => {
     const tr2 = document.createElement('tr');
-    // tr2.classList.add('card');
     const td = document.createElement('td');
     td.classList.add('card');
-    td.innerText = clue.question;
+    td.innerText = '#';
     tr2.appendChild(td);
     tbody.appendChild(tr2);
     jeopardy.append(tbody);
+    // Adding attributes to each td
+    // Each td should have the clue question, answer, and showing status stored as data attributes on the HTML element.
+    td.setAttribute('data-question', clue.question);
+    td.setAttribute('data-answer', clue.answer);
+    td.setAttribute('data-showing', clue.showing);
+    // Adding event listener to each td
+    // When clicked, the td should show either the question or the answer.
+    td.addEventListener('click', (e) => {
+      const card = e.target;
+      const question = card.getAttribute('data-question');
+      const answer = card.getAttribute('data-answer');
+      const showing = card.getAttribute('data-showing');
+
+      if (showing === 'null') {
+        card.innerText = question;
+        card.setAttribute('data-showing', 'question');
+      } else if (showing === 'question') {
+        card.innerText = answer;
+        card.setAttribute('data-showing', 'answer');
+      } else {
+        // card.innerText = '#';
+        // card.setAttribute('data-showing', '#');
+      }
+    });
   });
 
-  // Handle click on question to show answer
   function handleClick(evt) {
-    const td = evt.target;
-    const { clue } = td.dataset;
-    const { question } = td.dataset;
-    const { answer } = td.dataset;
-    const { showing } = td.dataset;
-
-    if (showing === null) {
-      td.innerText = '?';
-    } else if (clue === 'question') {
-      td.innerText = answer;
-      td.dataset.clue = 'answer';
-    } else {
-      td.innerText = question;
-      td.dataset.clue = 'question';
-    }
+    evt.target.innerText = 'Clicked!';
+    // evt.target.classList.add('clicked');
   }
 
-  // Add evevnt listener to each td
-  const tds = document.querySelectorAll('td');
-  tds.forEach((td) => {
-    td.addEventListener('click', handleClick);
-  });
-}
+  // When one card is clicked, all other cards in that category should be disabled.
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      const clickedCard = e.target;
+      const clickedCardCategory = clickedCard.parentElement.parentElement;
+      const clickedCardCategoryCards = clickedCardCategory.querySelectorAll('.card');
+      clickedCardCategoryCards.forEach((card) => {
+        card.classList.add('disabled');
+      });
+    });
+});
 
 categories.forEach((category) => addCategory(category));
 
