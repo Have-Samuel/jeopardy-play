@@ -127,6 +127,30 @@ function addCategory(category) {
     tbody.appendChild(tr2);
     jeopardy.append(tbody);
   });
+
+  // Handle click on question to show answer
+  function handleClick(evt) {
+    const td = evt.target;
+    const { clue } = td.dataset;
+    const { question } = td.dataset;
+    const { answer } = td.dataset;
+    const { $ } = td.dataset;
+    const { showing } = td.dataset;
+
+    if (clue === 'question') {
+      td.innerText = answer;
+      td.dataset.clue = 'answer';
+    } else {
+      td.innerText = question;
+      td.dataset.clue = 'question';
+    }
+  }
+
+  // Add evevnt listener to each td
+  const tds = document.querySelectorAll('td');
+  tds.forEach((td) => {
+    td.addEventListener('click', handleClick);
+  });
 }
 
 categories.forEach((category) => addCategory(category));
