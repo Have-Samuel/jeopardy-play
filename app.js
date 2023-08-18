@@ -158,8 +158,16 @@ function addCategory(category) {
 
   // When one card is clicked, all other cards in that category should be disabled.
   const allCards = document.querySelectorAll('.card');
-  allCards.forEach((card) => card.removeEventListener('click', handleClick));
-}
+  allCards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      const clickedCard = e.target;
+      const clickedCardCategory = clickedCard.parentElement.parentElement;
+      const clickedCardCategoryCards = clickedCardCategory.querySelectorAll('.card');
+      clickedCardCategoryCards.forEach((card) => {
+        card.classList.add('disabled');
+      });
+    });
+});
 
 categories.forEach((category) => addCategory(category));
 
