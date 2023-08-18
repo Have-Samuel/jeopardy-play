@@ -122,7 +122,7 @@ function addCategory(category) {
     // tr2.classList.add('card');
     const td = document.createElement('td');
     td.classList.add('card');
-    td.innerText = clue.question;
+    td.innerText = '#';
     tr2.appendChild(td);
     tbody.appendChild(tr2);
     jeopardy.append(tbody);
@@ -138,11 +138,14 @@ function addCategory(category) {
       const showing = card.getAttribute('data-showing');
 
       if (showing === 'null') {
-        card.setAttribute('data-showing', '');
-        card.innerText = '?';
+        card.innerText = question;
+        card.setAttribute('data-showing', 'question');
       } else if (showing === 'question') {
         card.innerText = answer;
         card.setAttribute('data-showing', 'answer');
+      } else {
+        card.innerText = '#';
+        card.setAttribute('data-showing', 'null');
       }
     });
   });
