@@ -52,8 +52,19 @@ const categories = [
       { question: 'British decoration named for former queen', answer: 'Victoria Cross', showing: null },
       { question: 'In the 80s Mario Lemieux \u0026 this man won every MVP award in the NHL', answer: 'Wayne Gretzky', showing: null },
       { question: 'Since 32 the U.S. Badge of Military Merit has had this colorful name', answer: 'The Purple Heart', showing: null },
-      { question: 'The Grammy Album of the Year for 1960 was this comic\s \"Button Down Mind\"', answer: 'Bob Newhart', showing: null },
-      { question: '26 years after writing it for the stage, he won Oscar for the screenplay \"Pygmalion\"', answer: 'George Bernard Shaw', showing: null },
+      { question: 'The Grammy Album of the Year for 1960 was this comic\\s \\"Button Down Mind\\"', answer: 'Bob Newhart', showing: null },
+      { question: '26 years after writing it for the stage, he won Oscar for the screenplay \\"Pygmalion\\"', answer: 'George Bernard Shaw', showing: null },
+    ],
+  },
+  {
+    title: 'The Bible',
+    id: 105,
+    clues: [
+      { question: 'The 1st book of the Bible', answer: 'Genesis', showing: null },
+      { question: 'The 2nd book of the Bible', answer: 'Exodus', showing: null },
+      { question: 'The 3rd book of the Bible', answer: 'Leviticus', showing: null },
+      { question: 'The 4th book of the Bible', answer: 'Numbers', showing: null },
+      { question: 'The 5th book of the Bible', answer: 'Deuteronomy', showing: null },
     ],
   },
 ];
@@ -78,6 +89,7 @@ async function getCategoryIds() {
   // Getting the category ids from the data
   const categoryIds = data.map((category) => category.category_id);
   console.log(categoryIds);
+  console.log(categories);
 }
 
 getCategoryIds();
@@ -92,15 +104,54 @@ jeopardy.classList = 'headings';
 
 function addCategory(category) {
   const thead = document.createElement('thead');
+  const tbody = document.createElement('tbody');
 
-  const tr = document.createElement('tr');
+  const tr1 = document.createElement('tr');
   const th = document.createElement('th');
+  th.classList.add('ind-head');
 
   th.innerText = category.title;
-  tr.appendChild(th);
+  tr1.appendChild(th);
 
-  thead.appendChild(tr);
+  // thead.appendChild(tr);
+  tbody.appendChild(tr1);
   jeopardy.append(thead);
+
+  category.clues.forEach((clue) => {
+    const tr2 = document.createElement('tr');
+    // tr2.classList.add('card');
+    const td = document.createElement('td');
+    td.classList.add('card');
+    td.innerText = clue.question;
+    tr2.appendChild(td);
+    tbody.appendChild(tr2);
+    jeopardy.append(tbody);
+  });
+
+  // Handle click on question to show answer
+  function handleClick(evt) {
+    const td = evt.target;
+    const { clue } = td.dataset;
+    const { question } = td.dataset;
+    const { answer } = td.dataset;
+    const { showing } = td.dataset;
+
+    if (showing === null) {
+      td.innerText = '?';
+    } else if (clue === 'question') {
+      td.innerText = answer;
+      td.dataset.clue = 'answer';
+    } else {
+      td.innerText = question;
+      td.dataset.clue = 'question';
+    }
+  }
+
+  // Add evevnt listener to each td
+  const tds = document.querySelectorAll('td');
+  tds.forEach((td) => {
+    td.addEventListener('click', handleClick);
+  });
 }
 
 categories.forEach((category) => addCategory(category));
