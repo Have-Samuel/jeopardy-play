@@ -94,7 +94,7 @@ async function getCategoryIds() {
 }
 
 getCategoryIds();
-krfjkfkk
+
 function getCategory(catId) {
 }
 
