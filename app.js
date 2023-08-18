@@ -134,7 +134,6 @@ function addCategory(category) {
     const { clue } = td.dataset;
     const { question } = td.dataset;
     const { answer } = td.dataset;
-    const { $ } = td.dataset;
     const { showing } = td.dataset;
 
     if (clue === 'question') {
@@ -143,6 +142,9 @@ function addCategory(category) {
     } else {
       td.innerText = question;
       td.dataset.clue = 'question';
+    } if (showing === null) {
+      td.innerText = '?';
+      // td.dataset.clue = 'question';
     }
   }
 
