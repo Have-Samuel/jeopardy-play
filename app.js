@@ -136,15 +136,14 @@ function addCategory(category) {
     const { answer } = td.dataset;
     const { showing } = td.dataset;
 
-    if (clue === 'question') {
+    if (showing === null) {
+      td.innerText = '?';
+    } else if (clue === 'question') {
       td.innerText = answer;
       td.dataset.clue = 'answer';
     } else {
       td.innerText = question;
       td.dataset.clue = 'question';
-    } if (showing === null) {
-      td.innerText = '?';
-      // td.dataset.clue = 'question';
     }
   }
 
