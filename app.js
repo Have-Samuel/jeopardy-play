@@ -155,18 +155,18 @@ function addCategory(category) {
     evt.target.innerText = 'Clicked!';
     // evt.target.classList.add('clicked');
   }
-
-  // When one card is clicked, all other cards in that category should be disabled.
-  const allCards = document.querySelectorAll('.card');
-  allCards.forEach((card) => {
-    card.addEventListener('click', (e) => {
-      const clickedCard = e.target;
-      const clickedCardCategory = clickedCard.parentElement.parentElement;
-      const clickedCardCategoryCards = clickedCardCategory.querySelectorAll('.card');
-      clickedCardCategoryCards.forEach((card) => {
-        card.classList.add('disabled');
-      });
+}
+// When one card is clicked, all other cards in that category should be disabled.
+const allCards = document.querySelectorAll('.card');
+allCards.forEach((card) => {
+  card.addEventListener('click', (e) => {
+    const clickedCard = e.target;
+    const clickedCardCategory = clickedCard.parentElement.parentElement;
+    const clickedCardCategoryCards = clickedCardCategory.querySelectorAll('.card');
+    clickedCardCategoryCards.forEach((card) => {
+      card.classList.add('disabled');
     });
+  });
 });
 
 categories.forEach((category) => addCategory(category));
