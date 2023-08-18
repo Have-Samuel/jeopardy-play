@@ -126,9 +126,27 @@ function addCategory(category) {
     tr2.appendChild(td);
     tbody.appendChild(tr2);
     jeopardy.append(tbody);
-  });
 
-  /}
+    td.setAttribute('data-question', clue.question);
+    td.setAttribute('data-answer', clue.answer);
+    td.setAttribute('data-showing', clue.showing);
+
+    td.addEventListener('click', (e) => {
+      const card = e.target;
+      const question = card.getAttribute('data-question');
+      const answer = card.getAttribute('data-answer');
+      const showing = card.getAttribute('data-showing');
+
+      if (showing === 'null') {
+        card.setAttribute('data-showing', '');
+        card.innerText = '?';
+      } else if (showing === 'question') {
+        card.innerText = answer;
+        card.setAttribute('data-showing', 'answer');
+      }
+    });
+  });
+}
 
 categories.forEach((category) => addCategory(category));
 
