@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // categories is the main data structure for the app; it looks like this:
 
 const categories = [
@@ -93,7 +94,7 @@ async function getCategoryIds() {
 }
 
 getCategoryIds();
-
+krfjkfkk
 function getCategory(catId) {
 }
 
@@ -124,11 +125,13 @@ function addCategory(category) {
     tr2.appendChild(td);
     tbody.appendChild(tr2);
     jeopardy.append(tbody);
-
+    // Adding attributes to each td
+    // Each td should have the clue question, answer, and showing status stored as data attributes on the HTML element.
     td.setAttribute('data-question', clue.question);
     td.setAttribute('data-answer', clue.answer);
     td.setAttribute('data-showing', clue.showing);
-
+    // Adding event listener to each td
+    // When clicked, the td should show either the question or the answer.
     td.addEventListener('click', (e) => {
       const card = e.target;
       const question = card.getAttribute('data-question');
@@ -143,7 +146,7 @@ function addCategory(category) {
         card.setAttribute('data-showing', 'answer');
       } else {
         // card.innerText = '#';
-        card.setAttribute('data-showing', '#');
+        // card.setAttribute('data-showing', '#');
       }
     });
   });
