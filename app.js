@@ -150,6 +150,15 @@ function addCategory(category) {
       }
     });
   });
+
+  function handleClick(evt) {
+    evt.target.innerText = 'Clicked!';
+    // evt.target.classList.add('clicked');
+  }
+
+  // When one card is clicked, all other cards in that category should be disabled.
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach((card) => card.removeEventListener('click', handleClick));
 }
 
 categories.forEach((category) => addCategory(category));
