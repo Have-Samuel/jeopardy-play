@@ -153,7 +153,7 @@ function addCategory(category) {
 
   function handleClick(evt) {
     evt.target.innerText = 'Clicked!';
-    // evt.target.classList.add('clicked');
+    evt.target.classList.add('clicked');
   }
 }
 // When one card is clicked, all other cards in that category should be disabled.
