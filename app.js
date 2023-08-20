@@ -145,10 +145,6 @@ function addCategory(category) {
         card.innerText = answer;
         card.setAttribute('data-showing', 'answer');
       }
-      // else {
-      // card.innerText = '#';
-      // card.setAttribute('data-showing', '#');
-      // }
     });
   });
 }
