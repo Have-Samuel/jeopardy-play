@@ -86,7 +86,7 @@ async function getCategoryIds() {
   });
   // Getting the data from the response
   const { data } = response;
-  console.log(data);
+  // console.log(data);
   // Getting the category ids from the data
   const categoryIds = data.map((category) => category.category_id);
   console.log(categoryIds);
