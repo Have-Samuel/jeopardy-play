@@ -89,7 +89,7 @@ async function getCategoryIds() {
   // console.log(data);
   // Getting the category ids from the data
   const categoryIds = data.map((category) => category.category_id);
-  console.log(categoryIds);
+  // console.log(categoryIds);
   console.log(categories);
 }
 
