@@ -68,6 +68,17 @@ const categories = [
       { question: 'The 5th book of the Bible', answer: 'Deuteronomy', showing: null },
     ],
   },
+  // {
+  //   title: 'The 50 States',
+  //   id: 10,
+  //   clues: [
+  //     { question: 'The 1st state', answer: 'Delaware', showing: null },
+  //     { question: 'The 2nd state', answer: 'Pennsylvania', showing: null },
+  //     { question: 'The 3rd state', answer: 'New Jersey', showing: null },
+  //     { question: 'The 4th state', answer: 'Georgia', showing: null },
+  //     { question: 'The 5th state', answer: 'Connecticut', showing: null },
+  //   ],
+  // },
 ];
 
 // let categories = [];
