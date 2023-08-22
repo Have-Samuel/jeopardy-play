@@ -43,12 +43,6 @@ tr {
   margin: 0.05rem;
 }
 
-/* tbody,
-tr,
-td {
-  cursor: pointer;
-} */
-
 th {
   margin: 0.05rem;
   width: 14.05vw;
@@ -61,7 +55,6 @@ th {
   padding: 5px;
   background-color: rgb(255, 153, 0);
   border-radius: 5px;
-  /* cursor: pointer; */
 }
 
 .card {
