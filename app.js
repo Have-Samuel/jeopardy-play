@@ -118,23 +118,23 @@ function addCategory(category) {
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
 
-  const tr1 = document.createElement('tr');
+  const tr = document.createElement('tr');
   const th = document.createElement('th');
 
-  th.innerText = category.title;
-  tr1.appendChild(th);
+  th.innerHTML = category.title;
+  tr.appendChild(th);
 
-  // thead.appendChild(tr);
-  tbody.appendChild(tr1);
-  jeopardy.append(thead);
+  thead.appendChild(tr);
+  // tbody.appendChild(tr1);
+  // jeopardy.append(thead);
 
   category.clues.forEach((clue) => {
-    const tr2 = document.createElement('tr');
+    // const tr2 = document.createElement('tr');
     const td = document.createElement('td');
     td.classList.add('card');
     td.innerText = '#';
-    tr2.appendChild(td);
-    tbody.appendChild(tr2);
+    tr.appendChild(td);
+    tbody.appendChild(tr);
     jeopardy.append(tbody);
     // Adding attributes to each td
     // Each td should have the clue question, answer, and showing status stored as data attributes on the HTML element.
