@@ -162,9 +162,6 @@ function addCategory(category) {
 
 categories.forEach((category) => addCategory(category));
 
-const allCards = Array.from(document.querySelectorAll('.card'));
-allCards.forEach((card) => card.removeEventListener('click'));
-
 // When one card is clicked, all other cards in that category should be disabled.
 
 async function fillTable() {
