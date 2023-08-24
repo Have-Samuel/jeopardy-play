@@ -104,7 +104,8 @@ async function getCategoryIds() {
   // console.log(categories);
 
   if (data === 'null') return '#';
-} 
+  
+}
 
 getCategoryIds();
 
