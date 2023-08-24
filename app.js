@@ -102,7 +102,9 @@ async function getCategoryIds() {
   const categoryIds = data.map((category) => category.category_id);
   console.log(categoryIds);
   // console.log(categories);
-}
+
+  if (data === 'null') return '#';
+} 
 
 getCategoryIds();
 
