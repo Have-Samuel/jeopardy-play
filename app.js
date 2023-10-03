@@ -105,7 +105,6 @@ async function getCategoryIds() {
 
   // When the showing variable is empty, the data should show null, when it has the answer,
   // it should show answer, and when it has question it should show question in the data attribute.
-  
 }
 
 getCategoryIds();
