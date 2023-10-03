@@ -159,7 +159,7 @@ function addCategory(category) {
         card.innerText = answer;
         card.setAttribute('data-showing', 'answer');
       }
-});
+    });
   });
 }
 
