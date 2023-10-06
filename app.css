@@ -76,14 +76,9 @@ th {
 }
 
 button {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
   background-color: rgb(255, 156, 0);
   border: 5px solid rgb(200, 114, 1);
   border-radius: 5px;
-  text-align: center;
   padding: 1rem;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
