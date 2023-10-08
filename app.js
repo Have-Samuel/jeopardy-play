@@ -88,6 +88,13 @@ const categories = [
  * Returns array of category ids
  */
 
+// Reset Button
+// const gameBtn = document.getElementsByName('button');
+
+// gameBtn.addEventListener('click', () => {
+
+// });
+
 async function getCategoryIds() {
   // Fetching the data from the API
   const response = await axios.get('https://jservice.io/api/clues', {
