@@ -147,7 +147,8 @@ function addCategory(category) {
     tbody.appendChild(tr);
     jeopardy.append(tbody);
     // Adding attributes to each td
-    // Each td should have the clue question, answer, and showing status stored as data attributes on the HTML element.
+    // Each td should have the clue question, answer, and showing status
+    // stored as data attributes on the HTML element.
     td.setAttribute('data-question', clue.question);
     td.setAttribute('data-answer', clue.answer);
     td.setAttribute('data-showing', clue.showing);
