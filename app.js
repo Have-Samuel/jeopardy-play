@@ -140,11 +140,12 @@ function addCategory(category) {
 
   category.clues.forEach((clue) => {
     // const tr2 = document.createElement('tr');
+    const trBody = document.createElement('tr');
     const td = document.createElement('td');
-    td.classList.add('card');
-    td.innerText = '#';
-    tr.appendChild(td);
-    tbody.appendChild(tr);
+    trBody.classList.add('card');
+    trBody.innerText = '#';
+    trBody.appendChild(td);
+    tbody.appendChild(trBody);
     jeopardy.append(tbody);
     // Adding attributes to each td
     // Each td should have the clue question, answer, and showing status
