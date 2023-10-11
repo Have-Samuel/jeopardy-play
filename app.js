@@ -160,7 +160,7 @@ function addCategory(category) {
       const answer = card.getAttribute('data-answer');
       const showing = card.getAttribute('data-showing');
 
-      if (showing === 'null') {
+      if (showing === '') {
         card.innerText = question;
         card.setAttribute('data-showing', 'question');
       } else if (showing === 'question') {
