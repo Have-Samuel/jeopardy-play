@@ -121,7 +121,7 @@ function getCategory(catId) {
 
 // Fill the HTML table#jeopardy with the categories & cells for questions.
 const jeopardy = document.querySelector('#jeopardy');
-jeopardy.classList = 'headings';
+jeopardy.classList = 'whole-board';
 // The first row should be filled with <th> elements, one for each category
 
 function addCategory(category) {
@@ -131,12 +131,12 @@ function addCategory(category) {
   const trHead = document.createElement('tr');
   const th = document.createElement('th');
 
-  th.innerHTML = category.title;
+  th.innerHTML = categories.title;
   trHead.appendChild(th);
-
+  console.log(trHead);
   thead.appendChild(trHead);
   // tbody.appendChild(tr1);
-  // jeopardy.append(thead);
+  jeopardy.append(thead);
 
   category.clues.forEach((clue) => {
     // const tr2 = document.createElement('tr');
