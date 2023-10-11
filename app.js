@@ -121,30 +121,33 @@ function getCategory(catId) {
 
 // Fill the HTML table#jeopardy with the categories & cells for questions.
 const jeopardy = document.querySelector('#jeopardy');
-jeopardy.classList = 'headings';
+const thead = document.querySelector('#head');
+const tbody = document.querySelector('#body');
+jeopardy.classList = 'whole-board';
 // The first row should be filled with <th> elements, one for each category
 
 function addCategory(category) {
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
 
-  const tr = document.createElement('tr');
+  const trHead = document.createElement('tr');
   const th = document.createElement('th');
 
-  th.innerHTML = category.title;
-  tr.appendChild(th);
-
-  thead.appendChild(tr);
+  th.innerHTML = categories.title;
+  trHead.appendChild(th);
+  console.log(trHead);
+  thead.appendChild(trHead);
   // tbody.appendChild(tr1);
-  // jeopardy.append(thead);
+  jeopardy.append(thead);
 
   category.clues.forEach((clue) => {
     // const tr2 = document.createElement('tr');
+    const trBody = document.createElement('tr');
     const td = document.createElement('td');
-    td.classList.add('card');
-    td.innerText = '#';
-    tr.appendChild(td);
-    tbody.appendChild(tr);
+    trBody.classList.add('card');
+    trBody.innerText = '#';
+    trBody.appendChild(td);
+    tbody.appendChild(trBody);
     jeopardy.append(tbody);
     // Adding attributes to each td
     // Each td should have the clue question, answer, and showing status
