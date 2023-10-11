@@ -128,13 +128,13 @@ function addCategory(category) {
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
 
-  const tr = document.createElement('tr');
+  const trHead = document.createElement('tr');
   const th = document.createElement('th');
 
   th.innerHTML = category.title;
-  tr.appendChild(th);
+  trHead.appendChild(th);
 
-  thead.appendChild(tr);
+  thead.appendChild(trHead);
   // tbody.appendChild(tr1);
   // jeopardy.append(thead);
 
