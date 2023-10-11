@@ -121,6 +121,8 @@ function getCategory(catId) {
 
 // Fill the HTML table#jeopardy with the categories & cells for questions.
 const jeopardy = document.querySelector('#jeopardy');
+const thead = document.querySelector('#head');
+const tbody = document.querySelector('#body');
 jeopardy.classList = 'whole-board';
 // The first row should be filled with <th> elements, one for each category
 
