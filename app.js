@@ -231,6 +231,19 @@
 function initBoord() {
   const board = document.getElementById('clue-board');
 
+  // Creating the Category Row
+  function initCatRow() {
+    const catRow = document.getElementById('category-row');
+
+    for (let i = 0; i < 6; i += 1) {
+      const box = document.createElement('div');
+      box.className = 'clue-box category-box';
+      catRow.appendChild(box);
+    }
+  }
+
+  initCatRow();
+
   function getClue() {
     console.log('Have a nice day!!');
   }
