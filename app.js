@@ -226,3 +226,21 @@ async function setupAndStart() {
 /** On page load, add event handler for clicking clues */
 
 // TODO
+
+// Initialize the game board on the page load
+function initBoord() {
+  let board = document.getElementById('clue-board');
+
+  // Generate 5 rows, then place 6 boxes in each row
+  for (let i = 0; i < 5; i++) {
+    let row = document.createElement('div');
+    let boxValue = '#';
+    row.className = 'clue-row';
+
+    for (let j = 0; j < 6; j++) {
+      // creating six 'divs' inside the row (Boxes)
+      const box = document.createElement('div');
+      box.className = 'clue-box';
+    }
+  }
+}
