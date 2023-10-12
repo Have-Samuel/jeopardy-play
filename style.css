@@ -40,23 +40,10 @@ h1 {
 }
 
 .whole-board {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
   color: #fff;
   font-size: 16px;
   border: 5px solid rgb(116, 63, 4);
 }
-
-/* tbody,
-th,
-tr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0.05rem;
-} */
 
 .head-stuf {
   margin: 0.05rem;
@@ -72,10 +59,10 @@ tr {
   border-radius: 5px;
 }
 
-/* .body-stuf {
-  display: flex;
-  flex-direction: column;
-} */
+.body-stuf {
+  /* display: flex; */
+  /* flex-direction: column; */
+}
 
 .card {
   display: flex;
