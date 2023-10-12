@@ -118,12 +118,12 @@ span {
 
 #clue-board {
   flex-direction: column;
-  border: 2px solid orange;
+  border: 2px solid blue;
 }
 
 .clue-row {
   display: flex;
-  border: 2px solid green;
+  border: 2px solid orange;
 }
 
 .clue-box {
