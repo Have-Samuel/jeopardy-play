@@ -147,7 +147,7 @@ function addCategory(category) {
   category.clues.forEach((clue) => {
     const trBody = document.createElement('tr');
     const td = document.createElement('td');
-    trBody.classList = 'card clear-up';
+    trBody.classList = 'card';
     td.innerText = '#';
     // td.classList = 'show-me';
     trBody.appendChild(td);
