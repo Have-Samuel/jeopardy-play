@@ -145,11 +145,11 @@ function addCategory(category) {
   jeopardy.append(thead);
 
   category.clues.forEach((clue) => {
-    // const tr2 = document.createElement('tr');
     const trBody = document.createElement('tr');
     const td = document.createElement('td');
-    trBody.classList = 'card';
-    trBody.innerText = '#';
+    trBody.classList = 'card clear-up';
+    td.innerText = '#';
+    // td.classList = 'show-me';
     trBody.appendChild(td);
     tbody.appendChild(trBody);
     jeopardy.append(tbody);
