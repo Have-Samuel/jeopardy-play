@@ -131,11 +131,10 @@ function addCategory(category) {
   const thead = document.querySelector('#head');
   thead.classList = 'show-up';
   const tbody = document.querySelector('#body');
-  // tbody.classList = 'make-up';
 
   const trHead = document.createElement('tr');
   const th = document.createElement('th');
-  // th.classList = 'show-up';
+  th.classList = 'head-stuf';
 
   th.innerHTML = category.title;
   trHead.appendChild(th);
@@ -147,6 +146,7 @@ function addCategory(category) {
   category.clues.forEach((clue) => {
     // const tr2 = document.createElement('tr');
     const trBody = document.createElement('tr');
+    trBody.classList = 'body-stuf';
     const td = document.createElement('td');
     trBody.classList.add('card');
     trBody.innerText = '#';
