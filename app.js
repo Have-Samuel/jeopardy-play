@@ -129,11 +129,13 @@ function addCategory(category) {
   // const thead = document.createElement('thead');
   // const tbody = document.createElement('tbody');
   const thead = document.querySelector('#head');
+  thead.classList = 'show-up';
   const tbody = document.querySelector('#body');
+  // tbody.classList = 'make-up';
 
   const trHead = document.createElement('tr');
   const th = document.createElement('th');
-  th.classList = 'show-up';
+  // th.classList = 'show-up';
 
   th.innerHTML = category.title;
   trHead.appendChild(th);
