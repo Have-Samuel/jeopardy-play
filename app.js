@@ -269,3 +269,47 @@ function initBoord() {
 }
 
 initBoord();
+
+// Funtion Build categories to fetch all the Categories and clues
+// And Build out the top Row of our Jeopard board
+
+function randInt() {
+  return Math.floor(Math.random() * (28163) + 1);
+}
+
+function buildCategories() {
+  // Fetching and hitting the API six times
+  const fetchReq1 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+    // Hit the result and pass it as Json
+    // and save it in the fetchReq1 Variable.
+  ).then((res) => res.json());
+  const fetchReq2 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  const fetchReq3 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  const fetchReq4 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  const fetchReq5 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  const fetchReq6 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  // Collect all our variable in an array
+  const allData = Promise.all([fetchReq1, fetchReq2, fetchReq3, fetchReq4, fetchReq5, fetchReq6]);
+
+  allData.then((res) => {
+    console.log(res);
+  });
+}
+
+buildCategories();
