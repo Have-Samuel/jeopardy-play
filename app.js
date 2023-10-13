@@ -227,7 +227,12 @@
 
 // TODO
 
+// Create clue board
 // Initialize the game board on the page load
+
+let categoryArray = [];
+const btnReset = document.querySelector('button');
+
 function initBoord() {
   const board = document.getElementById('clue-board');
 
@@ -272,9 +277,22 @@ initBoord();
 
 // Funtion Build categories to fetch all the Categories and clues
 // And Build out the top Row of our Jeopard board
-
+// Call API
 function randInt() {
   return Math.floor(Math.random() * (28163) + 1);
+}
+
+// Generate Our Categories to the Board
+function setCategories(categoryArray) {
+  // Getting the title of each category and dropping it into the DOM
+  const element = document.getElementById('category-row');
+  // The children are children of the parent Row
+  // const { children } = element;
+  const { children } = element;
+  // Loop thro the children giving the title
+  for (let i = 0; i < children.length; i += 1) {
+    children[i].innerHTML = categoryArray[i].title;
+  }
 }
 
 function buildCategories() {
@@ -309,7 +327,11 @@ function buildCategories() {
 
   allData.then((res) => {
     console.log(res);
+    // CategoryArray helps us to use it any where in our game
+    categoryArray = res;
+    setCategories(categoryArray);
   });
 }
 
-buildCategories();
+// buildCategories();
+btnReset.addEventListener('click', buildCategories);
