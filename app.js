@@ -249,8 +249,11 @@ function initBoord() {
 
   initCatRow();
 
-  function getClue() {
-    console.log('Have a nice day!!');
+  // Using getTarget to know which Item was Clicked
+  function getClue(event) {
+    // currentTarget targets the real item clicked
+    const child = event.currentTarget;
+    // console.log(child);
   }
 
   // Generate 5 rows, then place 6 boxes in each row
