@@ -227,7 +227,32 @@
 
 // TODO
 
+// Create clue board
 // Initialize the game board on the page load
+
+let categoryArray = [];
+const btnReset = document.querySelector('button');
+
+// Using currentTarget to know which Item was Clicked
+function getClue(event) {
+  // currentTarget targets the real item clicked
+  const child = event.currentTarget;
+  child.classList.add('clicked-box');
+  console.log(child);
+  // Extracting the value of the clicked Item
+  // and replacing the initial display using slice
+  const boxValue = child.innerHTML.slice(1);
+  // Need to know which Item was clicked, from which category
+  // We need to get the parent Row and then get its index.
+  const parent = child.parentNode;
+  const index = Array.prototype.findIndex.call(parent.children, (c) => c === child);
+  // The above statement find the index from the Array of a certain ROW
+  const cluesList = categoryArray[index].clues;
+  // Getting into the clues and finding the one with that clicked index
+  const clue = cluesList.find((obj) => obj.value === boxValue);
+  console.log(clue);
+}
+
 function initBoord() {
   const board = document.getElementById('clue-board');
 
@@ -244,14 +269,10 @@ function initBoord() {
 
   initCatRow();
 
-  function getClue() {
-    console.log('Have a nice day!!');
-  }
-
   // Generate 5 rows, then place 6 boxes in each row
   for (let i = 0; i < 5; i += 1) {
     const row = document.createElement('div');
-    const boxValue = '#';
+    const boxValue = 200 * (i + 1);
     row.className = 'clue-row';
 
     for (let j = 0; j < 6; j += 1) {
@@ -259,8 +280,8 @@ function initBoord() {
       const box = document.createElement('div');
       box.className = 'clue-box';
       // Box inner text
-      box.textContent = boxValue;
-      box.addEventListener('click', getClue, false);
+      box.textContent = `$${boxValue}`;
+      box.addEventListener('click', getClue);
       row.appendChild(box);
     }
     // Appending the Row to the board
@@ -269,3 +290,64 @@ function initBoord() {
 }
 
 initBoord();
+
+// Funtion Build categories to fetch all the Categories and clues
+// And Build out the top Row of our Jeopard board
+// Call API
+function randInt() {
+  return Math.floor(Math.random() * (28163) + 1);
+}
+
+// Generate Our Categories to the Board
+function setCategories(categoryArray) {
+  // Getting the title of each category and dropping it into the DOM
+  const element = document.getElementById('category-row');
+  // The children are children of the parent Row
+  // const { children } = element;
+  const { children } = element;
+  // Loop thro the children giving the title
+  for (let i = 0; i < children.length; i += 1) {
+    children[i].innerHTML = categoryArray[i].title;
+  }
+}
+
+function buildCategories() {
+  // Fetching and hitting the API six times
+  const fetchReq1 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+    // Hit the result and pass it as Json
+    // and save it in the fetchReq1 Variable.
+  ).then((res) => res.json());
+  const fetchReq2 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  const fetchReq3 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  const fetchReq4 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  const fetchReq5 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  const fetchReq6 = fetch(
+    `https://jservice.io/api/category/?&id=${randInt()}`,
+  ).then((res) => res.json());
+
+  // Collect all our variable in an array
+  const allData = Promise.all([fetchReq1, fetchReq2, fetchReq3, fetchReq4, fetchReq5, fetchReq6]);
+
+  allData.then((res) => {
+    console.log(res);
+    // CategoryArray helps us to use it any where in our game
+    categoryArray = res;
+    setCategories(categoryArray);
+  });
+}
+
+// buildCategories();
+btnReset.addEventListener('click', buildCategories);
