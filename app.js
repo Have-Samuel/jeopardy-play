@@ -233,6 +233,26 @@
 let categoryArray = [];
 const btnReset = document.querySelector('button');
 
+// Using currentTarget to know which Item was Clicked
+function getClue(event) {
+  // currentTarget targets the real item clicked
+  const child = event.currentTarget;
+  child.classList.add('clicked-box');
+  console.log(child);
+  // Extracting the value of the clicked Item
+  // and replacing the initial display using slice
+  const boxValue = child.innerHTML.slice(1);
+  // Need to know which Item was clicked, from which category
+  // We need to get the parent Row and then get its index.
+  const parent = child.parentNode;
+  const index = Array.prototype.findIndex.call(parent.children, (c) => c === child);
+  // The above statement find the index from the Array of a certain ROW
+  const cluesList = categoryArray[index].clues;
+  // Getting into the clues and finding the one with that clicked index
+  const clue = cluesList.find((obj) => obj.value === boxValue);
+  console.log(clue);
+}
+
 function initBoord() {
   const board = document.getElementById('clue-board');
 
@@ -249,17 +269,10 @@ function initBoord() {
 
   initCatRow();
 
-  // Using getTarget to know which Item was Clicked
-  function getClue(event) {
-    // currentTarget targets the real item clicked
-    const child = event.currentTarget;
-    // console.log(child);
-  }
-
   // Generate 5 rows, then place 6 boxes in each row
   for (let i = 0; i < 5; i += 1) {
     const row = document.createElement('div');
-    const boxValue = '#';
+    const boxValue = 200 * (i + 1);
     row.className = 'clue-row';
 
     for (let j = 0; j < 6; j += 1) {
@@ -267,8 +280,8 @@ function initBoord() {
       const box = document.createElement('div');
       box.className = 'clue-box';
       // Box inner text
-      box.textContent = boxValue;
-      box.addEventListener('click', getClue, false);
+      box.textContent = `$${boxValue}`;
+      box.addEventListener('click', getClue);
       row.appendChild(box);
     }
     // Appending the Row to the board
