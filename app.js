@@ -294,6 +294,8 @@ initBoord();
 // Funtion Build categories to fetch all the Categories and clues
 // And Build out the top Row of our Jeopard board
 // Call API
+
+// Generation of a random Integer for us
 function randInt() {
   return Math.floor(Math.random() * (28163) + 1);
 }
