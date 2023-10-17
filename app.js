@@ -274,12 +274,12 @@ function initBoord() {
   for (let i = 0; i < 5; i += 1) {
     const row = document.createElement('div');
     const boxValue = 200 * (i + 1);
-    row.className = 'clue-row';
+    row.classList = 'clue-row';
 
     for (let j = 0; j < 6; j += 1) {
       // creating six 'divs' inside the row (Boxes)
       const box = document.createElement('div');
-      box.className = 'clue-box';
+      box.classList = 'clue-box';
       // Box inner text
       box.textContent = `$${boxValue}`;
       box.addEventListener('click', getClue, false);
@@ -293,7 +293,7 @@ function initBoord() {
 initBoord();
 
 // Funtion Build categories to fetch all the Categories and clues
- // And Build out the top Row of our Jeopard board
+// And Build out the top Row of our Jeopard board
 // Call API
 
 // Generation of a random Integer for us
