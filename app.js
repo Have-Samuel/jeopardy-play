@@ -251,6 +251,7 @@ function getClue(event) {
   // Getting into the clues and finding the one with that clicked index
   const clue = cluesList.find((obj) => obj.value === boxValue);
   console.log(clue);
+  console.log(cluesList);
 }
 
 function initBoord() {
@@ -281,7 +282,7 @@ function initBoord() {
       box.className = 'clue-box';
       // Box inner text
       box.textContent = `$${boxValue}`;
-      box.addEventListener('click', getClue);
+      box.addEventListener('click', getClue, false);
       row.appendChild(box);
     }
     // Appending the Row to the board
@@ -292,7 +293,7 @@ function initBoord() {
 initBoord();
 
 // Funtion Build categories to fetch all the Categories and clues
-// And Build out the top Row of our Jeopard board
+ // And Build out the top Row of our Jeopard board
 // Call API
 
 // Generation of a random Integer for us
