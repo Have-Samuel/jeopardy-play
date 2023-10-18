@@ -238,7 +238,7 @@ function getClue(event) {
   // currentTarget targets the real item clicked
   const child = event.currentTarget;
   child.classList.add('clicked-box');
-  console.log(child);
+  // console.log(child);
   // Extracting the value of the clicked Item
   // and replacing the initial display using slice
   const boxValue = child.innerHTML.slice(1);
