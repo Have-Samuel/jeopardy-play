@@ -225,8 +225,6 @@
 
 /** On page load, add event handler for clicking clues */
 
-// TODO
-
 // Create clue board
 // Initialize the game board on the page load
 
