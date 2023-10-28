@@ -249,9 +249,8 @@ function getClue(event) {
   // The above statement find the index from the Array of a certain ROW
   const cluesList = categoryArray[index].clues;
   // Getting into the clues and finding the one with that clicked index
-  const clue = cluesList.find((obj) => obj.value === boxValue);
+  const clue = cluesList.find((obj) => obj.value === Number(boxValue));
   console.log(clue);
-  console.log(cluesList);
 }
 
 function initBoord() {
