@@ -249,6 +249,9 @@ function getClue(event) {
   // Getting into the clues and finding the one with that clicked index
   const clue = cluesList.find((obj) => obj.value === Number(boxValue));
   console.log(clue);
+
+  // Displaying the Question
+  showQuestion(clue, child, boxValue);
 }
 
 function initBoord() {
