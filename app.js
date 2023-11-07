@@ -231,26 +231,45 @@
 let categoryArray = [];
 const btnReset = document.querySelector('button');
 
+// Award points to the user
+function awardPoints(checkAnswer, possiblePoints, confirmAnswer) {
+  if (!(checkAnswer === 'incorrect' && confirmAnswer === true)) {
+    const target = document.getElementById('score');
+    let currentScore = Number(target.innerText);
+    currentScore += possiblePoints;
+    target.innerText = currentScore;
+    // Display the question in the target box
+    // alert(`Correct! You earned ${possiblePoints} points`);
+    alert('No Points awarded.');
+  // } else {
+  //   alert(`Wrong! The correct answer is ${confirmAnswer}`);
+  }
+}
+
+// Evaluation of the user answer and show the user to confirm
+function evaluateAnswer(userAnswer, correctAnswer, possiblePoints) {
+  const checkAnswer = (userAnswer === correctAnswer) ? 'correct' : 'incorrect';
+  const confirmAnswer = (
+    `For $${possiblePoints}, you answered ${userAnswer}, and the correct answer was ${correctAnswer}. 
+    Your answer appears to be${checkAnswer}. Click OK to accept or click cancel if the answer was not properly evaluated.`);
+  // console.log(checkAnswer);
+  awardPoints(checkAnswer, possiblePoints, confirmAnswer);
+  // if (checkAnswer) {
+  //   alert(`Correct! You earned ${possiblePoints} points`);
+  // } else {
+  //   alert(`Wrong! The correct answer is ${correctAnswer}`);
+  // }
+}
+
 // Function to show the Question and their answers
 function showQuestion(clue, target, boxValue) {
   const userAnswer = prompt(clue.question).toLowerCase();
   const correctAnswer = clue.answer.toLowerCase();
   const possiblePoints = Number(boxValue);
+  // To remove the event listener and prevent the user from clicking again
   target.innerHTML = clue.answer;
   target.removeEventListener('click', showQuestion, false);
-
-  // if (userAnswer === correctAnswer) {
-  //   alert('Correct');
-  //   child.innerHTML = '';
-  //   child.innerHTML = `$${boxValue} <br> <span class="answer">${clue.answer}</span>`;
-  // } else {
-  //   alert(`Incorrect. The correct answer is ${clue.answer}`);
-  //   child.innerHTML = '';
-  //   child.innerHTML = `$${boxValue} <br> <span class="answer">${clue.answer}</span>`;
-  //   // intial display is replaced by the answer
-  //   child.classList.add('answered-box');
-  //   boxValue.remove();
-  // }
+  evaluateAnswer(userAnswer, correctAnswer, possiblePoints);
 }
 
 // Using currentTarget to know which Item was Clicked
