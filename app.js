@@ -232,10 +232,13 @@ let categoryArray = [];
 const btnReset = document.querySelector('button');
 
 // Function to show the Question and their answers
-function showQuestion(clue, child, boxValue) {
+function showQuestion(clue, target, boxValue) {
   const userAnswer = prompt(clue.question).toLowerCase();
-  const correctAnswer = clue.answer.toLowerCase().replace(/<\/?[^>]+(>|$)/g, '');
-  
+  const correctAnswer = clue.answer.toLowerCase();
+  const possiblePoints = Number(boxValue);
+  target.innerHTML = clue.answer;
+  target.removeEventListener('click', showQuestion, false);
+
   // if (userAnswer === correctAnswer) {
   //   alert('Correct');
   //   child.innerHTML = '';
