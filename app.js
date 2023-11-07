@@ -231,6 +231,25 @@
 let categoryArray = [];
 const btnReset = document.querySelector('button');
 
+// Function to show the Question and their answers
+function showQuestion(clue, child, boxValue) {
+  const userAnswer = prompt(clue.question).toLowerCase();
+  const correctAnswer = clue.answer.toLowerCase().replace(/<\/?[^>]+(>|$)/g, '');
+  
+  // if (userAnswer === correctAnswer) {
+  //   alert('Correct');
+  //   child.innerHTML = '';
+  //   child.innerHTML = `$${boxValue} <br> <span class="answer">${clue.answer}</span>`;
+  // } else {
+  //   alert(`Incorrect. The correct answer is ${clue.answer}`);
+  //   child.innerHTML = '';
+  //   child.innerHTML = `$${boxValue} <br> <span class="answer">${clue.answer}</span>`;
+  //   // intial display is replaced by the answer
+  //   child.classList.add('answered-box');
+  //   boxValue.remove();
+  // }
+}
+
 // Using currentTarget to know which Item was Clicked
 function getClue(event) {
   // currentTarget targets the real item clicked
