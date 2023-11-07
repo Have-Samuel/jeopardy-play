@@ -264,7 +264,7 @@ function initBoord() {
       catRow.appendChild(box);
     }
   }
-
+  // Create the Category Row
   initCatRow();
 
   // Generate 5 rows, then place 6 boxes in each row
