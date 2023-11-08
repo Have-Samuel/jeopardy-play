@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
 // /* eslint-disable max-len */
 // // categories is the main data structure for the app; it looks like this:
 
@@ -234,25 +236,25 @@ const btnReset = document.querySelector('button');
 // Award points to the user
 function awardPoints(checkAnswer, possiblePoints, confirmAnswer) {
   if (!(checkAnswer === 'incorrect' && confirmAnswer === true)) {
+    // Award the points to the user
     const target = document.getElementById('score');
-    let currentScore = Number(target.innerText);
+    // making sure we know the curent score
+    let currentScore = Number(target.innerHTML);
     currentScore += possiblePoints;
-    target.innerText = currentScore;
-    // Display the question in the target box
-    // alert(`Correct! You earned ${possiblePoints} points`);
-    alert('No Points awarded.');
-  // } else {
-  //   alert(`Wrong! The correct answer is ${confirmAnswer}`);
+    target.innerHTML = currentScore;
+  } else {
+    alert('No points awarded.');
   }
 }
 
 // Evaluation of the user answer and show the user to confirm
 function evaluateAnswer(userAnswer, correctAnswer, possiblePoints) {
   const checkAnswer = (userAnswer === correctAnswer) ? 'correct' : 'incorrect';
-  const confirmAnswer = (
+  const confirmAnswer = confirm(
     `For $${possiblePoints}, you answered ${userAnswer}, and the correct answer was ${correctAnswer}. 
-    Your answer appears to be${checkAnswer}. Click OK to accept or click cancel if the answer was not properly evaluated.`);
-  // console.log(checkAnswer);
+    Your answer appears to be${checkAnswer}. Click OK to accept or click cancel if the answer was not properly evaluated.`,
+  );
+  // Pass all that to one function that will award the points
   awardPoints(checkAnswer, possiblePoints, confirmAnswer);
   // if (checkAnswer) {
   //   alert(`Correct! You earned ${possiblePoints} points`);
@@ -333,10 +335,6 @@ function initBoord() {
 
 initBoord();
 
-// Funtion Build categories to fetch all the Categories and clues
-// And Build out the top Row of our Jeopard board
-// Call API
-
 // Generation of a random Integer for us
 function randInt() {
   return Math.floor(Math.random() * (28163) + 1);
@@ -355,7 +353,37 @@ function setCategories(categoryArray) {
   }
 }
 
+// Reset Board and $$ amount if needed
+function resetBoard() {
+  // Reset the Board
+  const board = document.getElementById('clue-board');
+  while (board.firstChild) {
+    board.removeChild(board.firstChild);
+  }
+  const catParent = document.getElementById('category-row');
+  while (catParent.firstChild) {
+    catParent.removeChild(catParent.firstChild);
+  }
+  document.getElementById('score').innerHTML = 0;
+  initBoord();
+  setCategories(categoryArray);
+  // board.innerHTML = '';
+  // Reset the Score
+  // const target = document.getElementById('score');
+  // target.innerHTML = 0;
+}
+
+// Funtion Build categories to fetch all the Categories and clues
+// And Build out the top Row of our Jeopard board
+// Call API
+
 function buildCategories() {
+  // Reset the Board
+  // All the categories should be empty
+  if (!(document.getElementById('category-row').firstChild.innerHTML === '')) {
+    resetBoard();
+  }
+
   // Fetching and hitting the API six times
   const fetchReq1 = fetch(
     `https://jservice.io/api/category/?&id=${randInt()}`,
