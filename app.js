@@ -367,10 +367,6 @@ function resetBoard() {
   document.getElementById('score').innerHTML = 0;
   initBoord();
   setCategories(categoryArray);
-  // board.innerHTML = '';
-  // Reset the Score
-  // const target = document.getElementById('score');
-  // target.innerHTML = 0;
 }
 
 // Funtion Build categories to fetch all the Categories and clues
