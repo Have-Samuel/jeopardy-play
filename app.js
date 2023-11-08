@@ -32,11 +32,6 @@ function evaluateAnswer(userAnswer, correctAnswer, possiblePoints) {
   );
   // Pass all that to one function that will award the points
   awardPoints(checkAnswer, possiblePoints, confirmAnswer);
-  // if (checkAnswer) {
-  //   alert(`Correct! You earned ${possiblePoints} points`);
-  // } else {
-  //   alert(`Wrong! The correct answer is ${correctAnswer}`);
-  // }
 }
 
 // Function to show the Question and their answers
